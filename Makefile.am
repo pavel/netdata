@@ -19,7 +19,7 @@ MAINTAINERCLEANFILES= \
 EXTRA_DIST = \
 	.gitignore \
 	autogen.sh \
-	README \
+	README.md \
 	LICENSE.md \
 	COPYING \
 	autogen.sh \
@@ -36,15 +36,6 @@ SUBDIRS = \
 	system \
 	web \
 	$(NULL)
-
-if GIT_TREE
-
-all-local: README
-
-README: README.md
-	sed -e '/^## Features$$/p' -e '/^## Git/,/^## Features$$/d' $< > $@
-
-endif
 
 dist_noinst_DATA = netdata.spec
 
